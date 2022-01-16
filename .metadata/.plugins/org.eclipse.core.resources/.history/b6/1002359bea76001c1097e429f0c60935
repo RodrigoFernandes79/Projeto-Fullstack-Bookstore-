@@ -1,0 +1,22 @@
+package com.rodrigo.bookstore.services;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.rodrigo.bookstore.models.Categoria;
+import com.rodrigo.bookstore.repositories.CategoriaRepository;
+
+public class CategoriaService {
+	
+	@Autowired
+	private CategoriaRepository catRepository;
+
+	
+	
+	public Categoria criarCategoria(Categoria cat) {
+		Categoria obj = catRepository.save(cat);
+		return obj;
+	}
+
+}
