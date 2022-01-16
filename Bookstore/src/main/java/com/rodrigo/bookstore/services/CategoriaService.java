@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -60,8 +61,13 @@ public class CategoriaService {
 
 
 	public void deletarCategoriaPorId(Long id) {
+		
 		catRepository.findById(id).orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "ID: "+id+  " não encontrado!"));
+		try {
 		catRepository.deleteById(id);
+		}catch(DataIntegrityViolationException e) {
+			throw new DataIntegrityViolationException("Categoria nao pode ser Deletada! Possui Livros Associados.");
+		}
 		
 	}
 

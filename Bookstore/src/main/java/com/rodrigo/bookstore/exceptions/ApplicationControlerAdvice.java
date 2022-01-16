@@ -1,5 +1,6 @@
 package com.rodrigo.bookstore.exceptions;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,4 +20,14 @@ public class ApplicationControlerAdvice {
 		ApiException obj = new ApiException(fieldName, fieldError);
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(obj);
 	}
+	
+	@ExceptionHandler(DataIntegrityViolationException.class)
+	public ResponseEntity<ApiException> validationNotFoundException(DataIntegrityViolationException ex){
+		
+		String fieldName = ex.getMessage();
+		
+		
+		ApiException obj = new ApiException(fieldName);
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(obj);
+}
 }

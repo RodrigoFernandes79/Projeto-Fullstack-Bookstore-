@@ -7,11 +7,23 @@ public class ApiException {
 	
 	
 	
-	public ApiException(String campo, String message) {
+	public ApiException(String campo) {
 
+		this.campo = campo;
+		
+	}
+	
+	
+
+
+
+	public ApiException(String campo, String message) {
+		
 		this.campo = campo;
 		this.message = message;
 	}
+
+
 
 
 

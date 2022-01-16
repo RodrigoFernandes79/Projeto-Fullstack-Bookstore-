@@ -3,6 +3,7 @@ package com.rodrigo.bookstore.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,8 +19,14 @@ public class LivroService {
 	private LivroRepository livRepository;
 
 	public Livro criarLivro(Livro livro) {
+		try {
 		Livro obj = livRepository.save(livro);
+		
 		return obj;
+	
+	}catch(DataIntegrityViolationException e) {
+		throw new DataIntegrityViolationException("Categoria: " + livro.getCategoria().getId()+ " não Existe!");
+	}
 	}
 
 
