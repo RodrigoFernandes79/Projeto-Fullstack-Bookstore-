@@ -1,5 +1,8 @@
 package com.rodrigo.bookstore.controllers;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rodrigo.bookstore.Dtos.CategoriaDto;
 import com.rodrigo.bookstore.models.Categoria;
 import com.rodrigo.bookstore.services.CategoriaService;
 
@@ -28,11 +32,17 @@ public class CategoriaController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> mostrarCategoria(@PathVariable	Long id){
-		Categoria obj = catService.mostrarCategoria(id);
+	public ResponseEntity<Categoria> mostrarCategoriaPorId(@PathVariable	Long id){
+		Categoria obj = catService.mostrarCategoriaPorId(id);
 		return ResponseEntity.ok().body(obj);
 		
 	}
 
+	@GetMapping
+	public ResponseEntity<List<CategoriaDto>> mostrarCategoria(){
+		List<Categoria> list = catService.mostrarCategoria();
+		List<CategoriaDto> listDto = list.stream().map(obj -> new CategoriaDto(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDto);
+	}
 
 }
