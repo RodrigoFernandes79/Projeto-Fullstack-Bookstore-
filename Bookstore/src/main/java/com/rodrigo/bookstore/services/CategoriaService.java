@@ -57,4 +57,12 @@ public class CategoriaService {
 		
 	}
 
+
+
+	public void deletarCategoriaPorId(Long id) {
+		catRepository.findById(id).orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "ID: "+id+  " não encontrado!"));
+		catRepository.deleteById(id);
+		
+	}
+
 }
