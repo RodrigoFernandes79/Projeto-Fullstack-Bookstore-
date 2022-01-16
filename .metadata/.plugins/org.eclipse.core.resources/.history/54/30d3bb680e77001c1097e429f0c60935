@@ -1,0 +1,20 @@
+package com.rodrigo.bookstore.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rodrigo.bookstore.models.Livro;
+import com.rodrigo.bookstore.repositories.LivroRepository;
+
+@Service
+public class LivroService {
+	
+	@Autowired
+	private LivroRepository livRepository;
+
+	public Livro criarLivro(Livro livro) {
+		Livro obj = livRepository.save(livro);
+		return obj;
+	}
+
+}
