@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,5 +45,16 @@ public class CategoriaController {
 		List<CategoriaDto> listDto = list.stream().map(obj -> new CategoriaDto(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
 	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<CategoriaDto> atualizarCategoria(@RequestBody CategoriaDto catDto, @PathVariable Long id){
+		Categoria obj = catService.atualizarCategoria(catDto,id);
+		CategoriaDto objDto = new CategoriaDto(obj);
+		
+		
+		return ResponseEntity.ok().body(objDto);
+		
+	}
+	
 
 }

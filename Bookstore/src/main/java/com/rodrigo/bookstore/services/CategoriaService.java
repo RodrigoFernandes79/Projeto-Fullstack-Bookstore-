@@ -43,4 +43,18 @@ public class CategoriaService {
 		return obj;
 	}
 
+
+
+	public Categoria atualizarCategoria(CategoriaDto catDto, Long id) {
+		return catRepository.findById(id)
+				.map(obj ->{
+					obj.setNome(catDto.getNome());
+					obj.setDescriçao(catDto.getDescriçao());
+					Categoria dto = catRepository.save(obj);
+					return dto;
+				}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ID: "+id+ " não encontrado!"));
+		
+		
+	}
+
 }
