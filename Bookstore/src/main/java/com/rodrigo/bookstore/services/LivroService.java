@@ -1,5 +1,6 @@
 package com.rodrigo.bookstore.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
 
 import com.rodrigo.bookstore.models.Livro;
 import com.rodrigo.bookstore.repositories.LivroRepository;
@@ -17,6 +17,13 @@ public class LivroService {
 	
 	@Autowired
 	private LivroRepository livRepository;
+	
+	
+	@Autowired
+	private CategoriaService catService;
+
+
+	
 
 	public Livro criarLivro(Livro livro) {
 		try {
@@ -37,6 +44,15 @@ public class LivroService {
 
 		return obj.get();
 		
+	}
+
+	//Procurar livros por categoria:
+
+	public List<Livro> mostrarLivroPorCategoriaId(Long idCat) {
+		catService.mostrarCategoriaPorId(idCat);
+		
+		
+		return livRepository.encontrarPorCategoria(idCat);
 	}
 
 }
