@@ -55,4 +55,25 @@ public class LivroService {
 		return livRepository.encontrarPorCategoria(idCat);
 	}
 
+
+
+	public Livro alterarLivroPorId(Long id, Livro livro) {
+		return livRepository.findById(id)
+				.map(object ->{
+					object.setTitulo(livro.getTitulo());
+					object.setNome_autor(livro.getNome_autor());
+					object.setTexto(livro.getTexto());
+					object.setDescriçao(livro.getDescriçao());
+					object.setCategoria(livro.getCategoria());
+					Livro obj = livRepository.save(object);
+					return obj;
+				})
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"ID: "+id+ " não encontrado!"));
+		
+		
+	}
+
+
+
+	
 }
