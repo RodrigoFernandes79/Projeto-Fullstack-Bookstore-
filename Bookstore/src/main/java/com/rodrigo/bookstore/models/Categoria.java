@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,9 +27,14 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message= "Campo NOME não foi preenchido!")
+	@Length(min= 3 , max=100 , message="Campo NOME deve ser Preenchido entre 3 e 100 Caracteres!" )
 	private String nome;
 	
+	@NotEmpty(message= "Campo DESCRIÇÃO não foi preenchido!")
+	@Length(min= 3 , max=200 , message="Campo DESCRIÇÃO deve ser Preenchido entre 3 e 200 Caracteres!" )
 	private String descriçao;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="categoria")
 	private List<Livro> livros = new ArrayList<>();

@@ -3,6 +3,8 @@ package com.rodrigo.bookstore.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +31,7 @@ public class LivroController {
 	private LivroService livService;
 	
 	@PostMapping
-	ResponseEntity<Livro> criarLivro(@RequestBody Livro livro){
+	ResponseEntity<Livro> criarLivro(@Valid @RequestBody Livro livro){
 		
 	Livro obj = livService.criarLivro(livro);
 	
@@ -53,7 +55,7 @@ public class LivroController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Livro> alterarLivroPorId(@PathVariable Long id, @RequestBody Livro livro){
+	public ResponseEntity<Livro> alterarLivroPorId(@PathVariable Long id, @Valid @RequestBody Livro livro){
 		
 		Livro obj = livService.alterarLivroPorId(id,livro);
 		

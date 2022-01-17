@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 
 
@@ -20,13 +23,22 @@ public class Livro implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	
+	@NotEmpty(message= "Campo TÍTULO não foi preenchido!")
+	@Length(min= 3 , max=50 , message="Campo TÍTULO deve ser Preenchido entre 3 e 50 Caracteres!" )
 	private String titulo;
 	
+	@NotEmpty(message= "Campo NOME DO AUTOR não foi preenchido!")
+	@Length(min= 3 , max=50 , message="Campo NOME DO AUTOR deve ser Preenchido entre 3 e 50 Caracteres!" )
 	private String nome_autor;
 	
+	@NotEmpty(message= "Campo DESCRIÇÃO não foi preenchido!")
+	@Length(min= 3 , max=50 , message="Campo DESCRIÇÃO deve ser Preenchido entre 3 e 50 Caracteres!" )
 	private String descriçao;
 	
+	@NotEmpty(message= "Campo TEXTO não foi preenchido!")
+	@Length(min= 100 , max=5000000 , message="Campo TEXTO deve ser Preenchido entre 100 e 5.000.000 de Caracteres!" )
 	private String texto;
 	
 	@ManyToOne

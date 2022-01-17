@@ -3,6 +3,8 @@ package com.rodrigo.bookstore.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +30,7 @@ public class CategoriaController {
 	private CategoriaService catService;
 	
 	@PostMapping
-	public ResponseEntity<Categoria> criarCategoria(@RequestBody Categoria cat){
+	public ResponseEntity<Categoria> criarCategoria(@Valid @RequestBody Categoria cat){
 		Categoria obj = catService.criarCategoria(cat);
 		return ResponseEntity.status(HttpStatus.CREATED).body(obj);
 			
@@ -49,7 +51,7 @@ public class CategoriaController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<CategoriaDto> atualizarCategoria(@RequestBody CategoriaDto catDto, @PathVariable Long id){
+	public ResponseEntity<CategoriaDto> atualizarCategoria(@Valid @RequestBody CategoriaDto catDto, @PathVariable Long id){
 		Categoria obj = catService.atualizarCategoria(catDto,id);
 		CategoriaDto objDto = new CategoriaDto(obj);
 		
