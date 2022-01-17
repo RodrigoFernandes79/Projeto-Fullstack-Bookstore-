@@ -75,5 +75,12 @@ public class LivroService {
 
 
 
+	public void deletarLivroPorId(Long id) {
+		livRepository.findById(id).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND, "ID: "+id+ " não encontrado! Não foi possível deletar este livro!"));
+		livRepository.deleteById(id);
+	}
+
+
+
 	
 }
