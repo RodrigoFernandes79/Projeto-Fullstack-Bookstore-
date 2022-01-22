@@ -10,12 +10,12 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
+                <a routerLink="" class="nav-link active" aria-current="page">
                     <i class="material-icons" style="padding-right: .6rem;">home</i> Home
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-white">
+                <a href="" class="nav-link text-white">
                     <i class="material-icons" style="padding-right: .6rem;">menu_book</i> Categoria
                 </a>
             </li>
@@ -25,8 +25,9 @@
 
 
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content class="content bg-dark">
 
-        gggggggg
+        <router-outlet></router-outlet>
+
     </mat-sidenav-content>
 </mat-sidenav-container>
