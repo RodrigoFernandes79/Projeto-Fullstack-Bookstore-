@@ -35,7 +35,7 @@ public class Livro implements Serializable {
 	
 	@NotEmpty(message= "Campo DESCRIÇÃO não foi preenchido!")
 	@Length(min= 3 , max=50 , message="Campo DESCRIÇÃO deve ser Preenchido entre 3 e 50 Caracteres!" )
-	private String descriçao;
+	private String descricao;
 	
 	@NotEmpty(message= "Campo TEXTO não foi preenchido!")
 	@Length(min= 100 , max=5000000 , message="Campo TEXTO deve ser Preenchido entre 100 e 5.000.000 de Caracteres!" )
@@ -49,12 +49,12 @@ public class Livro implements Serializable {
 		
 	}
 
-	public Livro(Long id, String titulo, String nome_autor, String descriçao, String texto, Categoria categoria) {
+	public Livro(Long id, String titulo, String nome_autor, String descricao, String texto, Categoria categoria) {
 		
 		this.id = id;
 		this.titulo = titulo;
 		this.nome_autor = nome_autor;
-		this.descriçao = descriçao;
+		this.descricao = descricao;
 		this.texto = texto;
 		this.categoria = categoria;
 	}
@@ -83,16 +83,17 @@ public class Livro implements Serializable {
 		this.nome_autor = nome_autor;
 	}
 
-	public String getDescriçao() {
-		return descriçao;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescriçao(String descriçao) {
-		this.descriçao = descriçao;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getTexto() {
 		return texto;
+		
 	}
 
 	public void setTexto(String texto) {

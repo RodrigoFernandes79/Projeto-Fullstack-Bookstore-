@@ -21,7 +21,7 @@ public class CategoriaDto implements Serializable {
 	
 	@NotEmpty(message= "Campo DESCRIÇÃO não foi preenchido!")
 	@Length(min= 3 , max=200 , message="Campo DESCRIÇÃO deve ser Preenchido entre 3 e 200 Caracteres!" )
-	private String descriçao;
+	private String descricao;
 
 	public CategoriaDto() {
 		
@@ -31,7 +31,7 @@ public class CategoriaDto implements Serializable {
 		
 		this.id = cat.getId();
 		this.nome = cat.getNome();
-		this.descriçao = cat.getDescriçao();
+		this.descricao = cat.getDescricao();
 		
 	}
 
@@ -51,14 +51,15 @@ public class CategoriaDto implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getDescriçao() {
-		return descriçao;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescriçao(String descriçao) {
-		this.descriçao = descriçao;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
+	
 	
 	
 	

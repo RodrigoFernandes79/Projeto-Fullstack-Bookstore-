@@ -25,8 +25,8 @@ INDEX VERSION 1.131+C:\Users\rodri\OneDrive\Área de Trabalho\ProjetoFullStack\Pr
 1501770978.index
 3639304637.index
 2692651913.index
-3535400440.index
 618712396.index
+3535400440.index
 2538796040.index
 2572537421.index
 2679503833.index
@@ -41,8 +41,8 @@ INDEX VERSION 1.131+C:\Users\rodri\OneDrive\Área de Trabalho\ProjetoFullStack\Pr
 218743167.index
 3698117704.index
 2196934971.index
-1242244176.index
 2310777981.index
+1242244176.index
 1005393413.index
 2868213475.index
 4143586791.index
@@ -50,14 +50,14 @@ INDEX VERSION 1.131+C:\Users\rodri\OneDrive\Área de Trabalho\ProjetoFullStack\Pr
 2304903922.index
 2740768486.index
 1332305107.index
-4188323846.index
 3144212207.index
+4188323846.index
 235506107.index
 769553705.index
-1616127861.index
+1216356514.index
 961847968.index
 1835045808.index
-1216356514.index
+1616127861.index
 2899960737.index
 2790074753.index
 931411260.index

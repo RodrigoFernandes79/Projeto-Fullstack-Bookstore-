@@ -33,7 +33,8 @@ public class Categoria implements Serializable {
 	
 	@NotEmpty(message= "Campo DESCRIÇÃO não foi preenchido!")
 	@Length(min= 3 , max=200 , message="Campo DESCRIÇÃO deve ser Preenchido entre 3 e 200 Caracteres!" )
-	private String descriçao;
+	private String descricao;
+	
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="categoria")
@@ -45,11 +46,11 @@ public class Categoria implements Serializable {
 	}
 
 
-	public Categoria(Long id, String nome, String descriçao, List<Livro> livros) {
+	public Categoria(Long id, String nome, String descricao, List<Livro> livros) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.descriçao = descriçao;
+		this.descricao = descricao;
 		this.livros = livros;
 	}
 
@@ -74,13 +75,13 @@ public class Categoria implements Serializable {
 	}
 
 
-	public String getDescriçao() {
-		return descriçao;
+	public String getDescricao() {
+		return descricao;
 	}
 
 
-	public void setDescriçao(String descriçao) {
-		this.descriçao = descriçao;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 

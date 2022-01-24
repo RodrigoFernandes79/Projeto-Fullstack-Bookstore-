@@ -50,7 +50,7 @@ public class CategoriaService {
 		return catRepository.findById(id)
 				.map(obj ->{
 					obj.setNome(catDto.getNome());
-					obj.setDescriçao(catDto.getDescriçao());
+					obj.setDescricao(catDto.getDescricao());
 					Categoria dto = catRepository.save(obj);
 					return dto;
 				}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ID: "+id+ " não encontrado!"));

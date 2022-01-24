@@ -16,6 +16,20 @@ import { CategoriaListComponent } from './components/views/categoria/categoria-l
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ToastrModule } from 'ngx-toastr';
+
+import { RouterModule } from '@angular/router';
+import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
+import { FormsModule } from '@angular/forms';
+
+
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +38,10 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     SidenavComponent,
     HomeComponent,
-    CategoriaListComponent
+    CategoriaListComponent,
+    CategoriaCreateComponent,
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +52,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatIconModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    ToastrModule,
+    FormsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

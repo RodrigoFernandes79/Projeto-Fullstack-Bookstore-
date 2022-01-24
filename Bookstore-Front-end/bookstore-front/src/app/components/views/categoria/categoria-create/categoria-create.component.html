@@ -1,0 +1,19 @@
+<div class="card conbtainer   text-white bg-dark" style="height:15%; width:95%;margin:1rem auto;">
+    <div class="card-box" style="text-align: center;justify-content: center;">
+        <h1 class="card-title" style="font-weight:bold;color:rgb(194, 186, 186)">Criando Nova Categoria</h1>
+    </div>
+</div>
+
+<form class="text-light" style="width: 95%;margin: 1rem auto;">
+    <div class="form-group mb-3 ">
+        <label for="nome">Nome da categoria: </label>
+        <input type="text " [(ngModel)]="categoria.nome" name="nome" style="box-shadow: 10px 5px 5px grey; " class="form-control bg-dark text-light " id="nome" placeholder="Campo Obrigatório">
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="descricao">Descrição:</label>
+        <textarea style="box-shadow: 10px 5px 5px grey; " [(ngModel)]="categoria.descricao" name="descricao" class="form-control bg-dark text-light " id="descricao" placeholder="Campo Obrigatório" rows="3 "></textarea>
+    </div>
+    <button class="btn btn-primary me-md-2" (click)="cadastrarCateg()" style="box-shadow: 10px 5px 5px black;">Enviar</button>
+    <button type="button" style="box-shadow: 10px 5px 5px black;" (click)="voltarPraListaCateg()" class="btn btn-danger">Cancelar</button>
+</form>
