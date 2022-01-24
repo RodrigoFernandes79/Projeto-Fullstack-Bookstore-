@@ -20,4 +20,12 @@ export class CategoriaService {
   createCategoria(categoria:Categoria):Observable<Categoria>{
     return this.http.post<Categoria>(this.CategoriaUrl, categoria);
   }
+
+  getCategoriaById(id:number):Observable<Categoria>{
+    return this.http.get<Categoria>(`${this.CategoriaUrl}/${id}`);
+  }
+
+  deleteCategoriaById(id:number):Observable<Categoria>{
+    return this.http.delete<Categoria>(`${this.CategoriaUrl}/${id}`);
+  }
 }

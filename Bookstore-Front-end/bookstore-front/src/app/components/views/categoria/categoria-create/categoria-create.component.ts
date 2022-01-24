@@ -50,8 +50,11 @@ export class CategoriaCreateComponent implements OnInit {
    })
 
    );
-   this.categoria = new Categoria();
    this.voltarPraListaCateg();
+   
+   
+   
+   
 }
 
 
