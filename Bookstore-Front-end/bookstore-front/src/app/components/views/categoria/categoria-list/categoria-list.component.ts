@@ -35,7 +35,7 @@ export class CategoriaListComponent implements OnInit {
   delete(categoria:Categoria){
 this.categoriaSelecionada =categoria;  
 this.categoriaService.getCategoriaById(this.categoriaSelecionada.id)
-.subscribe(() =>{
+.subscribe(() =>
     Swal.fire({
       title: 'Você tem certeza que quer apagar a categoria '+  this.categoriaSelecionada.nome +' ?',
       text: "Você não poderá mais reverter isso!",
@@ -49,23 +49,32 @@ this.categoriaService.getCategoriaById(this.categoriaSelecionada.id)
         this.categoriaService.deleteCategoriaById(this.categoriaSelecionada.id)
 .subscribe(() =>{
         Swal.fire(
-          'Apagado!',
+         'Apagado!',
           'Categoria ' + this.categoriaSelecionada.nome + ' foi deletada.',
           'success'
           
           
-         ) 
+         )
          this.ngOnInit();
+
+        },     
+        err=> err.error(Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Cadastro não Realizado!Possui Livros associados.',
         
-        
+        })))
+  }
+  
     
-    })
-  }
-  else{
+   
     this.ngOnInit();
+  }),
+ 
+  
+    
+)
   }
-})
-})
 }
-}
+
 
