@@ -28,4 +28,7 @@ export class CategoriaService {
   deleteCategoriaById(id:number):Observable<Categoria>{
     return this.http.delete<Categoria>(`${this.CategoriaUrl}/${id}`);
   }
+  updateCategoriaById(id:number, categoria:Categoria):Observable<any>{
+    return this.http.put<any>(`${this.CategoriaUrl}/${id}`,categoria);
+  }
 }

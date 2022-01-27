@@ -21,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { RouterModule } from '@angular/router';
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 import { FormsModule } from '@angular/forms';
+import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 
 
 
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     CategoriaListComponent,
     CategoriaCreateComponent,
+    CategoriaUpdateComponent,
   
     
   ],

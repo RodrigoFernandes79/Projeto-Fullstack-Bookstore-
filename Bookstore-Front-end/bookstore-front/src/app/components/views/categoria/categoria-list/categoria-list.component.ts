@@ -61,7 +61,7 @@ this.categoriaService.getCategoriaById(this.categoriaSelecionada.id)
         err=> err.error(Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Cadastro não Realizado!Possui Livros associados.',
+          text: 'Cadastro não Deletado! Possui Livros associados.',
         
         })))
   }
@@ -74,6 +74,14 @@ this.categoriaService.getCategoriaById(this.categoriaSelecionada.id)
   
     
 )
+  }
+  update(id:number){
+    
+    this.router.navigate(['/categorias/update',id])
+   
+   
+    
+   
   }
 }
 

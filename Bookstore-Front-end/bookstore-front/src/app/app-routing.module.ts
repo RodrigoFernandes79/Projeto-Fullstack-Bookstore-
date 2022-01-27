@@ -4,6 +4,7 @@ import { CategoriaCreateComponent } from './components/views/categoria/categoria
 
 
 import { CategoriaListComponent } from './components/views/categoria/categoria-list/categoria-list.component';
+import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'', component:HomeComponent},
   
   {path:'categorias',component:CategoriaListComponent},
-  {path:'categorias/create', component:CategoriaCreateComponent}
+  {path:'categorias/create', component:CategoriaCreateComponent},
+  {path:'categorias/update/:id', component:CategoriaUpdateComponent }
  
   
 ];
