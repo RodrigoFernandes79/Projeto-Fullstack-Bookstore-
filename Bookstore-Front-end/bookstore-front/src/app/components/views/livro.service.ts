@@ -19,4 +19,12 @@ export class LivroService {
     
     return this.http.get<Livro[]>(`${this.livroUrl}${id}`);
   }
+
+  findLivroById(id:number):Observable<Livro>{
+    return this.http.get<Livro>(`${this.baselivroUrl}/${id}`);
+  }
+
+  deleteLivroById(id:number):Observable<Livro>{
+    return this.http.delete<Livro>(`${this.baselivroUrl}/${id}`);
+  }
 }
