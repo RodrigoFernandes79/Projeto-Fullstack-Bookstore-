@@ -1,0 +1,52 @@
+<div class="card conbtainer   text-white bg-dark" style="height:15%; width:95%;margin:1rem auto;">
+    <div class="card-box" style="text-align: center;justify-content: center;">
+        <h1 class="card-title" style="font-weight:bold;color:rgb(194, 186, 186)">Livros</h1>
+
+
+    </div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="width:95%;margin:1rem auto;">
+    <button type="button" style=" margin-right: 2%; box-shadow: 10px 5px 5px black;" class="btn btn-warning btn-lg ">
+        <i class="fas fa-regular fa-plus" ></i>Adicionar Livros
+    </button>
+</div>
+<div class="card-body  " style=" width:95%;box-shadow: 10px 5px 5px black;margin:1rem auto;">
+    <div class="table-responsive">
+        <table class="table  bg-dark text-light " width="90% ">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">Detalhar Livro</div>
+                    </th>
+
+                    <th>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center"> Ações</div>
+                    </th>
+
+                </tr>
+            </thead>
+
+            <tbody class="table text-light">
+                <tr *ngFor="let liv of livro ">
+                    <td>{{ liv.id }}</td>
+                    <td>{{ liv.titulo }}</td>
+
+                    <td>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button type="button" class="btn btn-light"><i class=" fas fa-regular fa-book" style="color:brown"></i></button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button type="button" class="btn btn-light me-md-2"><i class="fas fa-highlighter"style="color:blue;"></i> </button>
+                            <button type="button" class="btn btn-light "><i class=" fas fa-trash-alt" style="color:red"> </i> </button>
+                        </div>
+                    </td>
+
+                </tr>
+
+        </table>
+    </div>
+</div>

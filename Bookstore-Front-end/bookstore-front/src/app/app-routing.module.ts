@@ -9,6 +9,7 @@ import { CategoriaUpdateComponent } from './components/views/categoria/categoria
 
 
 import { HomeComponent } from './components/views/home/home.component';
+import { LivroListComponent } from './components/views/livro/livro-list/livro-list.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   
   {path:'categorias',component:CategoriaListComponent},
   {path:'categorias/create', component:CategoriaCreateComponent},
-  {path:'categorias/update/:id', component:CategoriaUpdateComponent }
+  {path:'categorias/update/:id', component:CategoriaUpdateComponent },
+  {path:'categorias/livros/:id', component:LivroListComponent}
  
   
 ];

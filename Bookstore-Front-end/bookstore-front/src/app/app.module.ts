@@ -22,6 +22,8 @@ import { RouterModule } from '@angular/router';
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
+import { LivroListComponent } from './components/views/livro/livro-list/livro-list.component';
+
 
 
 
@@ -42,6 +44,7 @@ import { CategoriaUpdateComponent } from './components/views/categoria/categoria
     CategoriaListComponent,
     CategoriaCreateComponent,
     CategoriaUpdateComponent,
+    LivroListComponent,
   
     
   ],

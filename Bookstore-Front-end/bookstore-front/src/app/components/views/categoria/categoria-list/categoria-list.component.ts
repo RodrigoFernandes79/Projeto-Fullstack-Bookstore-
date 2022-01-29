@@ -83,6 +83,9 @@ this.categoriaService.getCategoriaById(this.categoriaSelecionada.id)
     
    
   }
+  listarLivros(id:number){
+    this.router.navigate(['/categorias/livros',id ])
+  }
 }
 
 
