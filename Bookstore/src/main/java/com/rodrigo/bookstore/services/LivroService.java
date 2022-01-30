@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.rodrigo.bookstore.models.Categoria;
 import com.rodrigo.bookstore.models.Livro;
 import com.rodrigo.bookstore.repositories.LivroRepository;
 
@@ -25,10 +26,13 @@ public class LivroService {
 
 	
 
-	public Livro criarLivro(Livro livro) {
+	public Livro criarLivro(Long idCat, Livro livro) {
 		try {
-		Livro obj = livRepository.save(livro);
+			livro.setId(null);
+			Categoria cat = catService.mostrarCategoriaPorId(idCat);
+		livro.setCategoria(cat);
 		
+		Livro obj = livRepository.save(livro);
 		return obj;
 	
 	}catch(DataIntegrityViolationException e) {

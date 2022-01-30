@@ -79,6 +79,6 @@ this.mostrarLivro();
        
   }
 criarLivro():void{
-    this.router.navigate(['/categorias/livros/create'])
+    this.router.navigate(['/categorias/livros/create',this.id])
   }
 }

@@ -15,8 +15,8 @@ export class LivroService {
 
   constructor(private http:HttpClient) { }
 
-  createLivro(livro:Livro):Observable<Livro>{
-    return this.http.post<Livro>(this.baselivroUrl,livro);
+  createLivro(livro:Livro, id:number):Observable<Livro>{
+    return this.http.post<Livro>(`${this.livroUrl}${id}`,livro);
   }
 
   getLivroByCategoria(id:number ):Observable<Livro[]>{

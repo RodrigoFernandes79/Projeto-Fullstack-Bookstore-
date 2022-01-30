@@ -13,14 +13,53 @@ import { Livro } from '../livro.model';
 export class LivroCreateComponent implements OnInit {
   
   livro:Livro = new Livro();
- 
+  id:number;
+
   constructor(private service:LivroService,private route:ActivatedRoute, private router:Router) { }
 
 
   ngOnInit(): void {
     
+    this.id= this.route.snapshot.params['id'];
+    
   }
+criarCategoria():void{
+  
+  this.service.createLivro( this.livro, this.id)
+  
+  .subscribe(()=>
+  
+  Swal.fire({
+   position: 'top-end',
+   icon: 'success',
+   title: 'Categoria Salva com Sucesso!',
+   showConfirmButton: false,
+   timer: 1500
+   
+ }
+ 
+ ),
+ 
+  ()=>
 
+    
+    (
+    
+    Swal.fire({
+   icon: 'error',
+   title: 'Oops...',
+   text: 'Cadastro não Realizado!',
+ 
+ }))
+
+  ),
+  this.cancelaLivro();
+ 
+}
+
+cancelaLivro(){
+  this.router.navigate(['/categorias/livros',this.id ]);
+}
 }
     
     

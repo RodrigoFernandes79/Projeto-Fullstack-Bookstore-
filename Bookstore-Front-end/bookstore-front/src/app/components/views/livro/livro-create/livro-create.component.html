@@ -9,7 +9,7 @@
         <label for="titulo">Título do Livro: </label>
         <input type="text " required name="titulo" style="box-shadow: 10px 5px 5px grey; " class="form-control bg-dark text-light " [ngClass]="{'is-valid': livroTitulo.valid}" [(ngModel)]='livro.titulo' #livroTitulo="ngModel" id="titulo" placeholder="Campo Obrigatório"
             minlength="3" maxlength="50">
-        <div class="invalid-feedback">
+        <div class="invalid-feedback alert alert-danger" role="alert" style="font-weight:bold">
             Campo TÍTULO deve ter entre 3 e 50 caracteres
         </div>
     </div>
@@ -19,7 +19,7 @@
         <label for="nome_autor">Autor: </label>
         <input type="text " required name="nome_autor" style="box-shadow: 10px 5px 5px grey; " [ngClass]="{'is-valid': livroNomeAutor.valid}" [(ngModel)]='livro.nome_autor' #livroNomeAutor="ngModel" class="form-control bg-dark text-light " id="nome_autor" placeholder="Campo Obrigatório"
             minlength="3" maxlength="50">
-        <div class="invalid-feedback">
+        <div class="invalid-feedback alert alert-danger" role="alert" style="font-weight:bold">
             Campo AUTOR deve ter entre 3 e 50 caracteres
         </div>
     </div>
@@ -29,7 +29,7 @@
 
         <textarea style="box-shadow: 10px 5px 5px grey; " required name="descricao" [ngClass]="{'is-valid': livroDescricao.valid}" [(ngModel)]='livro.descricao' #livroDescricao="ngModel" id="descricao" class="form-control bg-dark text-light " id="descricao" placeholder="Campo Obrigatório"
             rows="3 " minlength="3" maxlength="50"></textarea>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback alert alert-danger" role="alert" style="font-weight:bold">
             Campo DESCRIÇÃO deve ter entre 3 e 50 caracteres
         </div>
     </div>
@@ -38,11 +38,11 @@
         <label for="texto">Texto:</label>
         <textarea style="box-shadow: 10px 5px 5px grey; " required name="texto" [ngClass]="{'is-valid': livroTexto.valid}" [(ngModel)]='livro.texto' #livroTexto="ngModel" id="texto" class="form-control bg-dark text-light " id="texto" placeholder="Campo Obrigatório"
             rows=" 6" minlength="100" maxlength="5000000"></textarea>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback alert alert-danger" role="alert" style="font-weight:bold">
             Campo TEXTO deve ter entre 100 e 5.000.000 caracteres
         </div>
     </div>
 
-    <button class="btn btn-primary me-md-2" type="submit" [disabled]="!courseForm.valid" style="box-shadow: 10px 5px 5px black;">Enviar</button>
-    <button type="button" style="box-shadow: 10px 5px 5px black;" class="btn btn-danger ">Cancelar</button>
+    <button class="btn btn-primary me-md-2" (click)="criarCategoria()" type="submit" [disabled]="!courseForm.valid" style="box-shadow: 10px 5px 5px black;">Enviar</button>
+    <button type="button" style="box-shadow: 10px 5px 5px black;" (click)="cancelaLivro()" class="btn btn-danger ">Cancelar</button>
 </form>

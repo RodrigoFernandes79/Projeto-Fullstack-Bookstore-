@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'categorias',component:CategoriaListComponent},
   {path:'categorias/create', component:CategoriaCreateComponent},
   {path:'categorias/update/:id', component:CategoriaUpdateComponent },
-  {path:'categorias/livros/create', component:LivroCreateComponent},
+  {path:'categorias/livros/create/:id', component:LivroCreateComponent},
   {path:'categorias/livros/:id', component:LivroListComponent},
   
  

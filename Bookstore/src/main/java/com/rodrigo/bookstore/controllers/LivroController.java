@@ -33,9 +33,9 @@ public class LivroController {
 	private LivroService livService;
 	
 	@PostMapping
-	ResponseEntity<Livro> criarLivro(@Valid @RequestBody Livro livro){
+	ResponseEntity<Livro> criarLivro(@RequestParam(value="categoria",defaultValue="0") Long idCat, @Valid @RequestBody Livro livro){
 		
-	Livro obj = livService.criarLivro(livro);
+	Livro obj = livService.criarLivro( idCat, livro);
 	
 	return ResponseEntity.status(HttpStatus.CREATED).body(obj);
 		
