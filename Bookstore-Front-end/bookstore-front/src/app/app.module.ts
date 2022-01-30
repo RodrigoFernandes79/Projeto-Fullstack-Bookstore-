@@ -23,6 +23,7 @@ import { CategoriaCreateComponent } from './components/views/categoria/categoria
 import { FormsModule } from '@angular/forms';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { LivroListComponent } from './components/views/livro/livro-list/livro-list.component';
+import { LivroCreateComponent } from './components/views/livro/livro-create/livro-create.component';
 
 
 
@@ -45,6 +46,7 @@ import { LivroListComponent } from './components/views/livro/livro-list/livro-li
     CategoriaCreateComponent,
     CategoriaUpdateComponent,
     LivroListComponent,
+    LivroCreateComponent,
   
     
   ],

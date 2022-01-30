@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Categoria } from '../../categoria/categoria.model';
@@ -18,18 +18,16 @@ export class LivroListComponent implements OnInit {
   id:number;
   livroSelecionado:Livro = new Livro();
 
-  constructor(private service:LivroService, private route:ActivatedRoute) { }
+  constructor(private service:LivroService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
   
     this.id =this.route.snapshot.params['id'];
 this.mostrarLivro();
 
-
   }
 
   mostrarLivro(){
-    
     
     this.service.getLivroByCategoria(this.id)
     .subscribe((resposta)=>
@@ -79,5 +77,8 @@ this.mostrarLivro();
     
 )
        
+  }
+criarLivro():void{
+    this.router.navigate(['/categorias/livros/create'])
   }
 }

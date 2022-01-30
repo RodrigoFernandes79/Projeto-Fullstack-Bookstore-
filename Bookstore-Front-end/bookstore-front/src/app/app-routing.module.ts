@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { compileComponentFromRender2 } from '@angular/compiler/src/render3/view/compiler';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 
@@ -9,6 +10,7 @@ import { CategoriaUpdateComponent } from './components/views/categoria/categoria
 
 
 import { HomeComponent } from './components/views/home/home.component';
+import { LivroCreateComponent } from './components/views/livro/livro-create/livro-create.component';
 import { LivroListComponent } from './components/views/livro/livro-list/livro-list.component';
 
 
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'categorias',component:CategoriaListComponent},
   {path:'categorias/create', component:CategoriaCreateComponent},
   {path:'categorias/update/:id', component:CategoriaUpdateComponent },
-  {path:'categorias/livros/:id', component:LivroListComponent}
+  {path:'categorias/livros/create', component:LivroCreateComponent},
+  {path:'categorias/livros/:id', component:LivroListComponent},
+  
  
   
 ];
