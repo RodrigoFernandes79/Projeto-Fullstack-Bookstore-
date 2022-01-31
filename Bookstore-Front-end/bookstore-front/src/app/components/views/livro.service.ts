@@ -31,4 +31,8 @@ export class LivroService {
   deleteLivroById(id:number):Observable<Livro>{
     return this.http.delete<Livro>(`${this.baselivroUrl}/${id}`);
   }
+
+  updateLivroById(id:number,livro:Livro):Observable<Livro>{
+    return this.http.put<Livro>(`${this.baselivroUrl}/${id}`, livro);
+  }
 }

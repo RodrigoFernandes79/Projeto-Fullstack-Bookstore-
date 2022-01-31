@@ -79,6 +79,10 @@ this.mostrarLivro();
        
   }
 criarLivro():void{
-    this.router.navigate(['/categorias/livros/create',this.id])
+    this.router.navigate(['/categorias/livros/create',this.id]);
+  }
+
+  updateLivro(id:number):void{
+    this.router.navigate(['/categorias/livros/update',id]);
   }
 }
