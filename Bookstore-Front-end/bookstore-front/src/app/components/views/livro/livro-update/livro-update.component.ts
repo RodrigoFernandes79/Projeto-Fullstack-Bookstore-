@@ -13,14 +13,15 @@ import { Livro } from '../livro.model';
 export class LivroUpdateComponent implements OnInit {
 
   id:number;
-  id_cat:string;
+  id_cat:number;
   livro:Livro = new Livro();
 categoria:Categoria = new Categoria();
+
   constructor( private router:ActivatedRoute, private service:LivroService, private route:Router) { }
 
   ngOnInit(): void {
-    this.categoria;
- this.id_cat = this.router.snapshot.paramMap.get('/:id');
+    
+ this.id_cat = this.router.snapshot.params['id'];
     this.id= this.router.snapshot.params['id_liv'];
     this.encontrarLivroPorId();
     

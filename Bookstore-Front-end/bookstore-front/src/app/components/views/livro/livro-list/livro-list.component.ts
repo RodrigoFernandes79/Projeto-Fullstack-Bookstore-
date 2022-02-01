@@ -83,6 +83,6 @@ criarLivro():void{
   }
 
   updateLivro(id:number):void{
-    this.router.navigate(['/categorias/livros/update',id]);
+    this.router.navigate(['/categorias/livros/update',this.id, id]);
   }
 }
