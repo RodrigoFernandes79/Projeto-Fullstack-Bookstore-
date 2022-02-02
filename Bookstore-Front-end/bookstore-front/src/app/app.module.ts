@@ -25,6 +25,7 @@ import { CategoriaUpdateComponent } from './components/views/categoria/categoria
 import { LivroListComponent } from './components/views/livro/livro-list/livro-list.component';
 import { LivroCreateComponent } from './components/views/livro/livro-create/livro-create.component';
 import { LivroUpdateComponent } from './components/views/livro/livro-update/livro-update.component';
+import { LivroReadAllComponent } from './components/views/livro/livro-read-all/livro-read-all.component';
 
 
 
@@ -49,6 +50,7 @@ import { LivroUpdateComponent } from './components/views/livro/livro-update/livr
     LivroListComponent,
     LivroCreateComponent,
     LivroUpdateComponent,
+    LivroReadAllComponent,
   
     
   ],

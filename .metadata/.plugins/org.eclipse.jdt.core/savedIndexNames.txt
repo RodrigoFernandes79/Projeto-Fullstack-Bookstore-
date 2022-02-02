@@ -49,9 +49,9 @@ INDEX VERSION 1.131+C:\Users\rodri\OneDrive\Área de Trabalho\ProjetoFullStack\Pr
 1865797976.index
 2304903922.index
 2740768486.index
-1332305107.index
-3144212207.index
 4188323846.index
+3144212207.index
+1332305107.index
 235506107.index
 769553705.index
 1216356514.index

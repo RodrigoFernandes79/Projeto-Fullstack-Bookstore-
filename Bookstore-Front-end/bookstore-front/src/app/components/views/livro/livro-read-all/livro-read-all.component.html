@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <div class="card text-white bg-dark mb-3" style="width:90%; margin:1px auto; text-align: center;  ">
+        <div class="card-header ">
+            <h1> {{ livro.titulo }}</h1>
+        </div>
+    </div>
+    <ul class="list-group list-group-flush " style="width:90%; margin: 1px auto;text-align: center; ">
+        <div class="card  bg-dark  mb-3">
+            <li class="list-group-item text-white bg-dark ">
+                <h2>Autor: {{ livro.nome_autor }}</h2>
+            </li>
+        </div>
+        <div class="card bg-dark mb-3">
+            <li class="list-group-item text-white bg-dark ">
+                <button type="button" (click)="retornaLista()" style="box-shadow: 10px 5px 5px black;" class="btn btn-warning"><i class="far fa-hand-point-left " style="margin-right: 0.6rem;"></i>Retornar Lista Livro</button>
+            </li>
+        </div>
+        <div class="card bg-dark mb-3">
+            <li class="list-group-item text-white bg-dark ">{{ livro.texto }}</li>
+        </div>
+    </ul>
+</div>

@@ -41,12 +41,12 @@
     <div class="form-group mb-4">
         <label for="texto">Texto:</label>
         <textarea style="box-shadow: 10px 5px 5px grey; " required name="texto" [ngClass]="{'is-valid': livroTexto.valid}" [(ngModel)]='livro.texto' #livroTexto="ngModel" id="texto" class="form-control bg-dark text-light " id="texto" placeholder="Campo Obrigatório"
-            rows=" 6" minlength="100" maxlength="5000000"></textarea>
+            minlength="100" maxlength="500000000"></textarea>
         <div class="invalid-feedback alert alert-danger" role="alert" style="font-weight:bold">
             Campo TEXTO deve ter entre 100 e 5.000.000 caracteres
         </div>
     </div>
 
-    <button class="btn btn-primary me-md-2" (click)="alterarLivroById()" type="submit" [disabled]="!courseForm.valid" style="box-shadow: 10px 5px 5px black;">Enviar</button>
+    <button class="btn btn-primary me-md-2" (click)="alterarLivroById()" type="submit" [disabled]="!courseForm.valid" style="box-shadow: 10px 5px 5px black;">Atualizar</button>
     <button type="button" (click)="retornaLista()" style="box-shadow: 10px 5px 5px black;" class="btn btn-warning"><i class="far fa-hand-point-left " style="margin-right: 0.6rem;"></i>Retornar Lista Livro</button>
 </form>

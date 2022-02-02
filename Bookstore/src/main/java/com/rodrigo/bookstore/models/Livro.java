@@ -38,7 +38,7 @@ public class Livro implements Serializable {
 	private String descricao;
 	
 	@NotEmpty(message= "Campo TEXTO não foi preenchido!")
-	@Length(min= 100 , max=5000000 , message="Campo TEXTO deve ser Preenchido entre 100 e 5.000.000 de Caracteres!" )
+	@Length(min= 100 , max=500000000 , message="Campo TEXTO deve ser Preenchido entre 100 e 5.000.000 de Caracteres!" )
 	private String texto;
 	
 	@ManyToOne
